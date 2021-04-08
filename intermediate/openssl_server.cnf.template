@@ -71,6 +71,7 @@ stateOrProvinceName_default     = #STATE#
 localityName_default            = #CITY#
 0.organizationName_default      = #COMPANY#
 organizationalUnitName_default  = #COMP_UNIT#
+commonName_default				= #SAN_DOMAIN#
 emailAddress_default            = #EMAIL#
 # **********************************************
 
@@ -111,10 +112,10 @@ keyUsage = critical, digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth
 crlDistributionPoints = @crl_info
 authorityInfoAccess = @ocsp_info
-# subjectAltName = @alt_names
+subjectAltName = @alt_names
 
-# [alt_names]
-# DNS.0 = #DOMAIN#
+[alt_names]
+DNS.0 = #SAN_DOMAIN#
 # DNS.1 = *.#DOMAIN#
 
 [ crl_ext ]
