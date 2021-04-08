@@ -18,3 +18,4 @@ openssl ca -revoke intermediate/certs/${SUBDOMAIN}.${DOMAIN}.crt.pem -config int
 
 # Update revoke list
 openssl ca -gencrl -config intermediate/openssl_intermediate.cnf -out intermediate/crl/${CRL_PREFIX}.crl -passin pass:${INT_CA_KEY_PASS}
+openssl crl -in intermediate/crl/${CRL_PREFIX}.crl -inform PEM -out intermediate/crl/${CRL_PREFIX}.bin.crl -outform DER

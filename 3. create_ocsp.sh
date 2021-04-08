@@ -4,6 +4,7 @@ source .env
 
 # Create the CRL
 openssl ca -config intermediate/openssl_intermediate.cnf -gencrl -out intermediate/crl/${CRL_PREFIX}.crl -passin pass:${INT_CA_KEY_PASS}
+openssl crl -in intermediate/crl/${CRL_PREFIX}.crl -inform PEM -out intermediate/crl/${CRL_PREFIX}.bin.crl -outform DER
 
 # Validate the CRL with OpenSSL
 openssl crl -in intermediate/crl/${CRL_PREFIX}.crl -noout -text

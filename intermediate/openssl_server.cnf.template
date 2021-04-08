@@ -111,11 +111,11 @@ keyUsage = critical, digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth
 crlDistributionPoints = @crl_info
 authorityInfoAccess = @ocsp_info
-subjectAltName = @alt_names
+# subjectAltName = @alt_names
 
-[alt_names]
-DNS.0 = #DOMAIN#
-DNS.1 = *.#DOMAIN#
+# [alt_names]
+# DNS.0 = #DOMAIN#
+# DNS.1 = *.#DOMAIN#
 
 [ crl_ext ]
 # Extension for CRLs (`man x509v3_config`).
